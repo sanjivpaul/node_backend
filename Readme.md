@@ -24,6 +24,7 @@ Install prettier as dev dependencies using command
 Note: Dont use single line connection for connecting data base use promises or async await because connecting database taking time.
 
 1. first approach connect db in index.js file
+
 ```js
 // index.js
 import mongoose from "mongoose";
@@ -61,7 +62,7 @@ connectionDB();
 })();
 ```
 
-1. second approach connect db in file and export the file to index.js file
+2. second approach connect db in file and export the file to index.js file
 
 ```js
 // db/index.js
