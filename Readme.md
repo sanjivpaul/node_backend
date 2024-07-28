@@ -5,6 +5,9 @@
 - [Folder Structure]()
 - [Initializing node server]()
 - [Connection Of Database]()
+- [profesional file structure]()
+- [jwt and user video models]()
+- [file upload multer]()
 
 ### Folder Structure
 
@@ -43,7 +46,7 @@ connectionDB();
 (async () => {})();
 
 //use IFFE function with ;
-;(async () => {
+(async () => {
   try {
     await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
     //    due to some reason our app is not able to talk to db
@@ -90,4 +93,16 @@ const connectDB = async () => {
 export default connectDB;
 ```
 
+### file upload multer
 
+create account on cloudanary
+
+install cloudanary
+
+- [`npm i cloudinary`]()
+- [`npm i multer`](https://github.com/expressjs/multer#readme)
+
+for uploading file we take two aprroaches
+
+1. upload files directly to cloudinary.
+2. first upload file in local server then upload in cloudinary and remove from local file sys. [Good practice]
