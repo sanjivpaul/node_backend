@@ -1,5 +1,5 @@
 import mongoose, {Schema} from "mongoose";
-import {jwt} from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 const userSchema = new Schema(
@@ -59,7 +59,7 @@ userSchema.pre("save", async function (next) {
   // so we need a condition here for prevent this
   // if modified or update password then save new password
   if (!this.isModified("password")) return next(); //if not modified then return from here not execute next line code
-  this.password = bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
