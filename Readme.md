@@ -13,6 +13,8 @@
 - [check user controller and post man tutorial]()
 - [refresh token and access token]()
 - [fetch refresh access token endpoint]()
+- [update controlers edit functionality]()
+
 
 ### Folder Structure
 

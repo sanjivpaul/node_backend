@@ -227,8 +227,12 @@ const logoutUser = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, {}, "User logged Out"));
 });
 
+// in this function we match refresh token
+// send expire refresh token to db is its mathch with db refresh token then
+// send one more fresh refresh token to the user
+// it is also called session
 const refreshAccessToken = asyncHandler(async (req, res) => {
-  // get refresh token from user
+  // get refresh token from user cookes
   const incomingRefreshToken =
     req.cookies.refreshToken || req.body.refreshToken;
 
