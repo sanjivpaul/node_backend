@@ -20,6 +20,11 @@ app.use(cookieParser());
 import userRouter from "./routes/user.routes.js"
 
 // routes declaration
+app.use("/", (req, res)=>{
+  res.status(200).send({
+    message:"Node Js Server is running"
+  })
+})
 app.use("/api/v1/users", userRouter)
 
 export {app};
